@@ -273,34 +273,63 @@ global j;
 s2 = {inString, k};
 switch inString(k-1)
     case {'a'}
-        if ends('ational', inString, k) s2 = rs('ate', inString, k, k0);
-        elseif ends('tional', inString, k) s2 = rs('tion', inString, k, k0); end
+        if ends('ational', inString, k)
+            s2 = rs('ate', inString, k, k0);
+        elseif ends('tional', inString, k)
+            s2 = rs('tion', inString, k, k0);
+        end
     case {'c'}
-        if ends('enci', inString, k) s2 = rs('ence', inString, k, k0);
-        elseif ends('anci', inString, k) s2 = rs('ance', inString, k, k0); end
+        if ends('enci', inString, k)
+            s2 = rs('ence', inString, k, k0);
+        elseif ends('anci', inString, k)
+            s2 = rs('ance', inString, k, k0);
+        end
     case {'e'}
-        if ends('izer', inString, k) s2 = rs('ize', inString, k, k0); end
+        if ends('izer', inString, k)
+            s2 = rs('ize', inString, k, k0);
+        end
     case {'l'}
-        if ends('bli', inString, k) s2 = rs('ble', inString, k, k0);
-        elseif ends('alli', inString, k) s2 = rs('al', inString, k, k0);
-        elseif ends('entli', inString, k) s2 = rs('ent', inString, k, k0);
-        elseif ends('eli', inString, k) s2 = rs('e', inString, k, k0);
-        elseif ends('ousli', inString, k) s2 = rs('ous', inString, k, k0); end
+        if ends('bli', inString, k)
+            s2 = rs('ble', inString, k, k0);
+        elseif ends('alli', inString, k)
+            s2 = rs('al', inString, k, k0);
+        elseif ends('entli', inString, k)
+            s2 = rs('ent', inString, k, k0);
+        elseif ends('eli', inString, k)
+            s2 = rs('e', inString, k, k0);
+        elseif ends('ousli', inString, k)
+            s2 = rs('ous', inString, k, k0);
+        end
     case {'o'}
-        if ends('ization', inString, k) s2 = rs('ize', inString, k, k0);
-        elseif ends('ation', inString, k) s2 = rs('ate', inString, k, k0);
-        elseif ends('ator', inString, k) s2 = rs('ate', inString, k, k0); end
+        if ends('ization', inString, k)
+            s2 = rs('ize', inString, k, k0);
+        elseif ends('ation', inString, k)
+            s2 = rs('ate', inString, k, k0);
+        elseif ends('ator', inString, k)
+            s2 = rs('ate', inString, k, k0);
+        end
     case {'s'}
-        if ends('alism', inString, k) s2 = rs('al', inString, k, k0);
-        elseif ends('iveness', inString, k) s2 = rs('ive', inString, k, k0);
-        elseif ends('fulness', inString, k) s2 = rs('ful', inString, k, k0);
-        elseif ends('ousness', inString, k) s2 = rs('ous', inString, k, k0); end
+        if ends('alism', inString, k)
+            s2 = rs('al', inString, k, k0);
+        elseif ends('iveness', inString, k)
+            s2 = rs('ive', inString, k, k0);
+        elseif ends('fulness', inString, k)
+            s2 = rs('ful', inString, k, k0);
+        elseif ends('ousness', inString, k)
+            s2 = rs('ous', inString, k, k0);
+        end
     case {'t'}
-        if ends('aliti', inString, k) s2 = rs('al', inString, k, k0);
-        elseif ends('iviti', inString, k) s2 = rs('ive', inString, k, k0);
-        elseif ends('biliti', inString, k) s2 = rs('ble', inString, k, k0); end
+        if ends('aliti', inString, k)
+            s2 = rs('al', inString, k, k0);
+        elseif ends('iviti', inString, k)
+            s2 = rs('ive', inString, k, k0);
+        elseif ends('biliti', inString, k)
+            s2 = rs('ble', inString, k, k0);
+        end
     case {'g'}
-        if ends('logi', inString, k) s2 = rs('log', inString, k, k0); end
+        if ends('logi', inString, k)
+            s2 = rs('log', inString, k, k0);
+        end
 end
 j = s2{2};
 
@@ -310,16 +339,27 @@ global j;
 s3 = {inString, k};
 switch inString(k)
     case {'e'}
-        if ends('icate', inString, k) s3 = rs('ic', inString, k, k0);
-        elseif ends('ative', inString, k) s3 = rs('', inString, k, k0);
-        elseif ends('alize', inString, k) s3 = rs('al', inString, k, k0); end
+        if ends('icate', inString, k)
+            s3 = rs('ic', inString, k, k0);
+        elseif ends('ative', inString, k)
+            s3 = rs('', inString, k, k0);
+        elseif ends('alize', inString, k)
+            s3 = rs('al', inString, k, k0);
+        end
     case {'i'}
-        if ends('iciti', inString, k) s3 = rs('ic', inString, k, k0); end
+        if ends('iciti', inString, k)
+            s3 = rs('ic', inString, k, k0);
+        end
     case {'l'}
-        if ends('ical', inString, k) s3 = rs('ic', inString, k, k0);
-        elseif ends('ful', inString, k) s3 = rs('', inString, k, k0); end
+        if ends('ical', inString, k)
+            s3 = rs('ic', inString, k, k0);
+        elseif ends('ful', inString, k)
+            s3 = rs('', inString, k, k0);
+        end
     case {'s'}
-        if ends('ness', inString, k) s3 = rs('', inString, k, k0); end
+        if ends('ness', inString, k)
+            s3 = rs('', inString, k, k0);
+        end
 end
 j = s3{2};
 
@@ -328,40 +368,52 @@ function s4 = step4(inString, k, k0)
 global j;
 switch inString(k-1)
     case {'a'}
-        if ends('al', inString, k) end;
+        if ends('al', inString, k)
+        end
     case {'c'}
         if ends('ance', inString, k)
-        elseif ends('ence', inString, k) end;
+        elseif ends('ence', inString, k)
+        end
     case {'e'}
-        if ends('er', inString, k) end;
+        if ends('er', inString, k)
+        end
     case {'i'}
-        if ends('ic', inString, k) end;
+        if ends('ic', inString, k)
+        end
     case {'l'}
         if ends('able', inString, k)
-        elseif ends('ible', inString, k) end;
+        elseif ends('ible', inString, k)
+        end
     case {'n'}
         if ends('ant', inString, k)
         elseif ends('ement', inString, k)
         elseif ends('ment', inString, k)
-        elseif ends('ent', inString, k) end;
+        elseif ends('ent', inString, k)
+        end
     case {'o'}
         if ends('ion', inString, k)
             if j == 0
             elseif ~(strcmp(inString(j),'s') || strcmp(inString(j),'t'))
                 j = k;
             end
-        elseif ends('ou', inString, k) end;
+        elseif ends('ou', inString, k)
+        end
     case {'s'}
-        if ends('ism', inString, k) end;
+        if ends('ism', inString, k)
+        end
     case {'t'}
         if ends('ate', inString, k)
-        elseif ends('iti', inString, k) end;
+        elseif ends('iti', inString, k)
+        end
     case {'u'}
-        if ends('ous', inString, k) end;
+        if ends('ous', inString, k)
+        end
     case {'v'}
-        if ends('ive', inString, k) end;
+        if ends('ive', inString, k)
+        end
     case {'z'}
-        if ends('ize', inString, k) end;
+        if ends('ize', inString, k)
+        end
 end
 if measure(inString, k0) > 1
     s4 = {inString(k0:j), j};
