@@ -1,4 +1,7 @@
 function stem = porterStem(inString)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Returns word stem given a lowercase word
+
 % Applies the Porter Stemming algorithm as presented in the following
 % paper:
 % Porter, 1980, An algorithm for suffix stripping, Program, Vol. 14,
@@ -21,12 +24,12 @@ function stem = porterStem(inString)
 % argument.  This function returns the stemmed word as a string.
 
 % Source: https://tartarus.org/martin/PorterStemmer/matlab.txt
-global j;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+global j;% Used for other function calls within the algorithm
 k = length(inString);
-k0 = 1;
+k0 = 1;% The original algorithm starts at 0, compensate for MATLAB
 j = k;
-
-
 
 % With this if statement, strings of length 1 or 2 don't go through the
 % stemming process. Remove this conditional to match the published
