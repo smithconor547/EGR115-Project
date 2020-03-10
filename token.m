@@ -6,16 +6,22 @@ function [out] = token(inString)
 % generate an array when whitespace is encountered.
 
 % Lowercase
+inString = tolower(inString);
 
 % Remove punctuation
 strip = '';% Stripped string
+j = 1;
 for k = 1:length(inString)
 	if isalpha(inString(k)) || isspace(inString(k))
-		strip = strip + inString(k);
+		strip(j) = inString(k);
+		j = j + 1;
+	end
+end
 
-out = inString;
+out = strip;
 
 % Slice string into array of words for Porter algorithm processing
+wordArray = 
 
 % Recombine into whitespace delimeted string
 % NOTE: This output requirement may change based on the implementation
