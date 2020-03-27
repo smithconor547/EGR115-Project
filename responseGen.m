@@ -10,4 +10,4 @@ function [response] = responseGen(inString)
 
 response = fprintf('This is a response to the input %s\n', inString);
 
-end;
+end
