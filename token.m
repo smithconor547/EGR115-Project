@@ -18,7 +18,6 @@ for k = 1:length(inString)
 	end
 end
 
-disp(strip);% Debugging
 % Hack to make the cell include the last word
 strip = append(strip, ' #');
 
@@ -30,22 +29,27 @@ while k < length(strip)
 	if isspace(strip(k))
 		wordCell(currentWord) = {strip(1:(k - 1))};
 		currentWord = currentWord + 1;
-		strip = strip((k + 1):length(strip));% Does this line work properly?
+		strip = strip((k + 1):length(strip));
 		k = 0;
 	end
 	k = k + 1;
-	%For debugging
-	%wordCell
-	%fprintf('currentWord: %g\n', currentWord);
-	%fprintf('k: %g\n', k);
-	%disp('---------------------')
 end
 
-out = wordCell;
+wordCell
+% Call Porter algorithm on each cell
+for k = 1:length(wordCell)
+	wordCell(k) = {porterStem(char(wordCell(k)))};
+end
 
 % Recombine into whitespace delimited string
 % NOTE: This output requirement may change based on the implementation
 % of the response generation
+temp = '';
+for k = 1:length(wordCell)
+	temp = append(temp, ' ', char(wordCell(k)));
+end
+temp(1) = '';% Fix the extra space at the start
+out = temp;
 
 end
 
