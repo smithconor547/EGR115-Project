@@ -6,31 +6,39 @@ function out = token(inString)
 % generate an array when whitespace is encountered.
 
 % Lowercase
-inString = tolower(inString);
+inString = lower(inString);
 
 % Remove punctuation
-strip = "";% Stripped string
+strip = '';% Stripped string
 l = 1;
 for k = 1:length(inString)
-	if isalpha(inString(k)) || isspace(inString(k))
+	if isstrprop(inString(k), 'alpha') || isspace(inString(k))
 		strip(l) = inString(k);
 		l = l + 1;
 	end
 end
 
-disp(strip)
+disp(strip);% Debugging
+% Hack to make the cell include the last word
+strip = append(strip, ' #');
 
 % Slice string into cell array of words for Porter algorithm processing
 wordCell = {};
 currentWord = 1;
 k = 1;
-while length(strip) > 0
+while k < length(strip)
 	if isspace(strip(k))
 		wordCell(currentWord) = {strip(1:(k - 1))};
 		currentWord = currentWord + 1;
-		strip = strip((k + 1):length(strip));
+		strip = strip((k + 1):length(strip));% Does this line work properly?
+		k = 0;
 	end
-	k = k + 1
+	k = k + 1;
+	%For debugging
+	%wordCell
+	%fprintf('currentWord: %g\n', currentWord);
+	%fprintf('k: %g\n', k);
+	%disp('---------------------')
 end
 
 out = wordCell;
