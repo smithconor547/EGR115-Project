@@ -35,7 +35,6 @@ while k < length(strip)
 	k = k + 1;
 end
 
-wordCell
 % Call Porter algorithm on each cell
 for k = 1:length(wordCell)
 	wordCell(k) = {porterStem(char(wordCell(k)))};
@@ -52,4 +51,3 @@ temp(1) = '';% Fix the extra space at the start
 out = temp;
 
 end
-
