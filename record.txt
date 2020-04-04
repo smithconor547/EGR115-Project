@@ -1,0 +1,14 @@
+in,out
+hi,hello
+bye,see ya
+yo,sup
+what is matlab,it is a coding program
+it is a coding program,what is a coding program
+what is a coding program,the brains of a computer
+hello,how are you
+how are you,good
+hi,why is thanos so powerful
+why is thanos so powerful,he has all the infinity stones
+he has all the infinity stones,what are infinity stones
+why is thanos so powerful,wonderful weather were having
+wonderful weather were having,you really have that little to say
